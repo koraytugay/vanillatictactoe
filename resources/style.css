@@ -9,6 +9,20 @@ li {
   list-style: none;
 }
 
+#container {
+  text-align: center;
+  margin: 50px auto auto;
+}
+
+#game-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#history-container {
+  display: inline-block;
+}
+
 .game-square {
   display: inline;
   width: 40px;

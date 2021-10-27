@@ -5,7 +5,7 @@ const gameContainer = document.querySelector("#game-container");
 
 function process(number) {
   const squares = [...history[current]];
-  squares[number] = current % 2 === 1 ? 'X' : 'O';
+  squares[number] = current % 2 === 0 ? 'X' : 'O';
   history = history.slice(0, current + 1);
   history.push(squares);
   current++;
@@ -44,14 +44,14 @@ function refreshBoard() {
 }
 
 function drawHistory() {
-  const historyContainer = document.querySelector("#history-container");
+  const historyContainer = document.querySelector("#history-list");
   historyContainer.innerHTML = "";
   for (let i = 0; i < history.length; i++) {
     const historyListItem = document.createElement("li");
     const historyLink = document.createElement("a");
     historyLink.textContent = `Back to step ${i}`;
     historyLink.href = "#";
-    historyLink.addEventListener('click', ev => {
+    historyLink.addEventListener('click', () => {
       current = i;
       refreshBoard();
     });
